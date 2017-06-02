@@ -31,17 +31,5 @@ randomAdvice = (msg) ->
 
 
 module.exports = (robot) ->
-  robot.respond /what (do you|should I) do (when|about) (.*)/i, (msg) ->
-    getAdvice msg, msg.match[3]
-
-  robot.respond /how do you handle (.*)/i, (msg) ->
-    getAdvice msg, msg.match[1]
-
-  robot.respond /(.*) some advice about (.*)/i, (msg) ->
-    getAdvice msg, msg.match[2]
-
-  robot.respond /(.*) think about (.*)/i, (msg) ->
-    getAdvice msg, msg.match[2]
-
-  robot.respond /(.*) advice$/i, (msg) ->
+  robot.respond /(.*)/i, (msg) ->
     randomAdvice(msg)
