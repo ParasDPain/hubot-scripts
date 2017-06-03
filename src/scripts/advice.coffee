@@ -31,5 +31,5 @@ randomAdvice = (msg) ->
 
 
 module.exports = (robot) ->
-  robot.respond /(.*)/i, (msg) ->
+  robot.respond /advice (.*)/i, (msg) ->
     randomAdvice(msg)
