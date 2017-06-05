@@ -28,8 +28,8 @@ randomAdvice = (msg) ->
 
 
 module.exports = (robot) ->
-  robot.respond /advice(.*)/i, (msg) ->
-    randomAdvice(msg)
-
   robot.respond /advice (.*)/i, (msg) ->
     getAdvice msg, msg.match[1]
+
+  robot.respond /advice(.*)/i, (msg) ->
+    randomAdvice(msg)
