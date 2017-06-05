@@ -8,10 +8,7 @@
 #   None
 #
 # Commands:
-#   hubot what should I do about (.*)
-#   hubot what do you think about (.*)
-#   hubot how do you handle (.*)
-#   hubot I need some advice
+#   hubot (.*)
 #
 # Author:
 #   pengwynn
@@ -31,5 +28,8 @@ randomAdvice = (msg) ->
 
 
 module.exports = (robot) ->
-  robot.respond /advice (.*)/i, (msg) ->
+  robot.respond /advice(.*)/i, (msg) ->
     randomAdvice(msg)
+
+  robot.respond /advice (.*)/i, (msg) ->
+    getAdvice msg, msg.match[1]
